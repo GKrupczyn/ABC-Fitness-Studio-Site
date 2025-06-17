@@ -4,59 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <img src ="images/logo.png" alt"Client Logo">
-    <h1>ABC Fitness Studio</h1>
-    <a href="index.html">Home Page</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="custompage.html">Custom Page</a>
-    
-    <h2>Gallery</h2>
-    <button>View Cart</button>
-    <img src="images/SoloKickBoxing.png"alt"Solo Kick Boxing">
-    <p>Solo Kick-Boxing Session</p>
-    <p>60 minute 1-on-1 Kick-Boxing class with a cetified instructor</p>
-    <button>Add to Cart</button>
-    <img src="images/GroupKickBoxing.png"alt"Group Kick Boxing">
-    <p>Group Kick-Boxing Session</p>
+    <header class="banner">
+        <img src ="logo.png" alt="Client Logo" class="logo">
+        <h1>ABC Fitness Studio</h1>
+        <a href="index.html">Home Page</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="custompage.html">Our Community</a>
+        </header>
+
+    <h3 id="main-page-heading">Gallery</h3>
+    <button class="view-cart-btn">View Cart</button>
+    <section class="gal">
+        <div class="gal-img">
+            <img src="SoloKickBoxing.png"alt="Solo Kick Boxing">
+            <h2 style="color:black">Solo Kick-Boxing Session</h2>
+            <p>60 minute 1-on-1 Kick-Boxing class with a cetified instructor</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="gal-img">
+    <img src="GroupKickBoxing.png"alt="Group Kick Boxing">
+    <h2 style="color:black">Group Kick-Boxing Session</h2>
     <p>60 minute Kick-Boxing class in a group setting</p>
-    <button>Add to Cart</button>
-    <img src="images/SoloPilates.png"alt"Solo Pilates">
-    <p>Solo Pilates Session</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="SoloPilates.png"alt="Solo Pilates">
+    <h2 style="color:black">Solo Pilates Session</h2>
     <p>60 minute 1-on-1 Pilates class with a certified instructor </p>
-    <button>Add to Cart</button>
-    <img src="images/GroupPilates.png"alt"Group Pilates">
-    <p>Group Pilates Session</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="GroupPilates.png"alt="Group Pilates">
+    <h2 style="color:black">Group Pilates Session</h2>
     <p>60 minute Pilates class in a group setting</p>
-    <button>Add to Cart</button>
-    <img src="images/SoloYoga.png"alt"Solo Yoga">
-    <p>Solo Yoga Session</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="SoloYoga.png"alt="Solo Yoga">
+    <h2 style="color:black">Solo Yoga Session</h2>
     <p>60 minute 1-on-1 yoga class with a certified instructor</p>
-    <button>Add to Cart</button>
-    <img src="images/GroupYoga.png"alt"Group Yoga">
-    <p>Group Yoga Session</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="GroupYoga.png"alt="Group Yoga">
+    <h2 style="color:black">Group Yoga Session</h2>
     <p>60 minute Yoga class in a group setting</p>
-    <button>Add to Cart</button>
-    <img src="images/TeeShirt.png"alt"ABC Fitness Tee Shirt">
-    <p>ABC Tee</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="TeeShirt.png"alt="ABC Fitness Tee Shirt">
+    <h2 style="color:black">ABC Tee</h2>
     <p>100% cotton tee shirt with ABC logo </p>
-    <button>Add to Cart</button>
-    <img src="images/WaterBottle.png"alt"ABC Fitness Water Bottle">
-    <p>ABC Water Bottle</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="WaterBottle.png"alt="ABC Fitness Water Bottle">
+    <h2 style="color:black">ABC Water Bottle</h2>
     <p>Aluminum ABC Fitness branded water bottle</p>
-    <button>Add to Cart</button>
-    <img src="images/YogaMat.png"alt"ABC Fitness Yoga Mat">
-    <p>ABC Yoga mat</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="gal-img">
+    <img src="YogaMat.png"alt="ABC Fitness Yoga Mat">
+    <h2 style="color:black">ABC Yoga mat</h2>
     <p>1/2 thick ABC Fitness branded yoga mat with nonslip bottom</p>
-    <button>Add to Cart</button>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+</section>
 
     <h3>Subscribe to Our Newsletter</h3>
-    <textarea></textarea>
-<button>Subscribe</button>
+    <section class="socials">
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </section>
+   <input type="email" id="subscribe-email" placeholder="Enter Your Email">
+<button id="subscribeBtn">Subscribe</button>
+<span id="subscribe-error" class="subscribe-error">Please enter a valid email address.</span>
+
+
+<section class="links">
+    <div class"link">
 <a href="index.html">Home Page</a>
+</div>
     <a href="aboutus.html">About Us</a>
-    <a href="custompage.html">Custom Page</a>
+    <a href="custompage.html">Our Community</a>
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+    <h3>Your Cart</h3>
+    <ul id="cart-items-list"></ul>
+    <button id="clear-cart-btn">Clear Cart</button>
+    <button id="process-order-btn">Process Order</button>
+    <button id="close-modal-btn">Close</button>
+  </div>
+</div>
+</section>
+<!--Beginning of scripting-->
+<script>
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  function saveCartToSession() {
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  document.getElementById("subscribeBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById("subscribe-email");
+    const subscribeError = document.getElementById("subscribe-error");
+    if (emailInput.value === "") {
+      subscribeError.style.display = "inline";
+      subscribeError.innerText = "Please enter a valid email address.";
+    } else {
+      subscribeError.style.display = "none";
+      emailInput.value = "";  
+      alert("Thank you for subscribing!");
+    }
+  });
+
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const itemTitle = this.parentElement.querySelector('h2').textContent;
+      cart.push(itemTitle);
+      saveCartToSession();
+      alert(`"${itemTitle}" has been added to your cart.`);
+    });
+  });
+
+  const viewCartButton = document.querySelector('.view-cart-btn');
+  const modal = document.getElementById('cart-modal');
+  const cartList = document.getElementById('cart-items-list');
+  const clearCartBtn = document.getElementById('clear-cart-btn');
+  const processOrderBtn = document.getElementById('process-order-btn');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+
+  viewCartButton.addEventListener('click', function () {
+    const storedCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    cartList.innerHTML = '';
+    if (storedCart.length === 0) {
+      cartList.innerHTML = '<li>Your cart is empty.</li>';
+    } else {
+      storedCart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartList.appendChild(li);
+      });
+    }
+    modal.style.display = 'block';
+  });
+
+  clearCartBtn.addEventListener('click', () => {
+    if (cart.length === 0){
+      alert("No items to clear.");
+    } else {
+      cart.length = 0;
+      sessionStorage.removeItem("cart");
+      cartList.innerHTML = '<li>Your cart is empty.</li>';
+      alert("Your cart has been emptied.");
+    }
+  });
+
+  processOrderBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add something first!");
+    } else {
+      alert("Your order is being fulfilled!");
+      cart.length = 0;
+      sessionStorage.removeItem("cart");
+      modal.style.display = 'none';
+    }
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', event => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
 
 </body>
 </html>
