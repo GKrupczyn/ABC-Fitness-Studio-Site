@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <img src ="images/logo.png" alt"Client Logo">
-    <h1>ABC Fitness Studio</h1>
-    <a href="index.html">Home Page</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="aboutus.html">About Us</a>
+    <header class="banner">
+        <img src ="logo.png" alt="Client Logo" class="logo">
+        <h1>ABC Fitness Studio</h1>
+        <a href="index.html">Home Page</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="aboutus.html">About Us</a>
+        </header>
     <h2>Our Customers</h2>
+<section class="feedback">
+<div class="customer">
 <h3>John Smith</h3>
 <p>"As a guy, I was hesitant at first, but the welcoming vibe and knowledgeable instructors won me over. I've gained strength, improved flexibility, and found a new sense of mental clarity I didn’t expect."
 </p>
+</div>
+<div class="customer">
 <h3>Sarah Fields</h3>
 <p>"This studio has completely changed the way I connect with my body. I started with yoga, added Pilates, and now I’m hooked on the kickboxing classes too! It’s the perfect balance of peace and power."</p>
+</div>
+<div class="customer">
 <h3>Barbara Johnson</h3>
 <p>"Every class feels like a reset button for my mind and body. I leave feeling stronger, calmer, and more centered. The mix of disciplines keeps things fresh and motivating."</p>
-<h4>Community Involvments</h4>
-<h5>"Move for a Cause" Monthly Chairty Class</h5>
-<p>Once a month, the studio hosts a donation-based class (rotating between Yoga, Pilates, and Kickboxing) where all proceeds go to a local nonprofit supporting mental health, women’s shelters, or youth wellness programs. It’s a powerful way to move with purpose and give back.</p>
-<h5>Community Wellness Workshop</h5>
-<p>Quarterly, the studio offers free or low-cost wellness workshops open to the public, covering topics like stress relief through breathwork, beginner kickboxing for confidence, or posture and core health. These events build connection and make wellness accessible to everyone, not just members.</p>
+</div>
+</section>
 
-<h4>Upcoming Events:</h4>
+<section class="events">
+<div class="community-involvements">
+<h3>Community Involvments</h3>
+<h4>"Move for a Cause" Monthly Chairty Class</h4>
+<p>Once a month, the studio hosts a donation-based class (rotating between Yoga, Pilates, and Kickboxing) where all proceeds go to a local nonprofit supporting mental health, women’s shelters, or youth wellness programs. It’s a powerful way to move with purpose and give back.</p>
+<h3>Community Wellness Workshop</h3>
+<p>Quarterly, the studio offers free or low-cost wellness workshops open to the public, covering topics like stress relief through breathwork, beginner kickboxing for confidence, or posture and core health. These events build connection and make wellness accessible to everyone, not just members.</p>
+</div>
+
+<div class="upcoming-events">
+<h3>Upcoming Events:</h3>
 <p>“Balance & Breath” – A Mind-Body Reset Workshop
 Date: Saturday, May 18th
 Time: 10:00 AM – 12:00 PM
@@ -36,18 +53,50 @@ Join us for a special two-hour workshop that blends gentle Pilates, calming yoga
 
 Spots are limited!
 </p>
+</div>
+</section>
 
-<p> Questions/Inquiries?
-    Contact Us!
-    info@ABCFitness.com
-</p>
+<section class="questions">
+<p> Questions/Inquiries?</p>
+<p>Contact Us!</p>
+<p> info@ABCFitness.com </p>
+</section>
 
 <h3>Subscribe to Our Newsletter</h3>
-<textarea></textarea>
-<button>Subscribe</button>
-<a href="index.html">Home Page</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="aboutus.html">About us</a>
+<section class="socials">
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </section>
+ <input type="email" id="subscribe-email" placeholder="Enter Your Email">
+<button id="subscribeBtn">Subscribe</button>
+<span id="subscribe-error" class="subscribe-error">Please enter a valid email address.</span>
 
+
+<section class="links">
+    <div class"link">
+<a href="index.html">Home Page</a>
+</div>
+    <a href="gallery.html">Gallery</a>
+    <a href="aboutus.html">About Us</a>
+</section>
+<!--Beginning of scripting-->
+<script>
+  document.getElementById("subscribeBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById("subscribe-email");
+    const subscribeError = document.getElementById("subscribe-error");
+     if (emailInput.value === "") {
+        subscribeError.style.display = "inline";
+                subscribeError.innerText = "Please enter a valid email address.";
+            } else {
+                 subscribeError.style.display = "none";
+                 emailInput.value = "";  
+                alert("Thank you for subscribing!");
+            }    
+  });
+</script>
 </body>
 </html>
