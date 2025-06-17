@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <img src ="images/logo.png" alt"Client Logo">
-    <h1>ABC Fitness Studio</h1>
-    <a href="index.html">Home Page</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="custompage.html">Custom Page</a>
-
-    <h2>About Us</h2>
+    <header class="banner">
+        <img src ="logo.png" alt="Client Logo" class="logo">
+        <h1>ABC Fitness Studio</h1>
+        <a href="index.html">Home Page</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="custompage.html">Our Community</a>
+        </header>
+        <h3 id="about-us-heading">About Us</h3>
+<section class="about-us">
     <p>At ABC Fitness Studio, we believe true strength lies in balance—between movement and stillness, effort and ease, mind and body. Our unique blend of Pilates, Yoga, and Kickboxing offers a holistic path to physical vitality and inner peace.
 
         Whether you're looking to build core strength through Pilates, find calm and flexibility in Yoga, or unleash your energy in Kickboxing, our classes are designed to meet you where you are—and guide you toward where you want to be. Each session is more than a workout; it's a mindful experience that reconnects you with your body, reduces stress, and empowers you from the inside out.
@@ -20,34 +24,134 @@
         Our instructors are passionate, welcoming, and deeply committed to your wellness journey. No matter your age or fitness level, we’re here to help you cultivate balance, build resilience, and move through life with greater clarity and confidence.
         
         Join us and discover the harmony of strength, serenity, and self-discovery.</p>
+    </section>
+    
+    <h3 id="business-hours"> Business Hours</h3>
+    <section class="hours">
+        <div class="h">
+      <p>Monday    | Closed </p>
+     <p> Tuesday   | 3pm-8pm </p>
+    <p>  Wednesday | 3pm-8pm </p>
+     <p> Thursday  | 3pm-8pm </p>
+     <p> Friday    | 3pm-9pm </p>
+      <p>Saturday  | 8am-3pm </p>
+      <p>Sunday    | Closed </p>
+    </div>
+</section>
 
-    <h3>Business Hours</h3>
-    <p>Monday    | Closed
-       Tuesday   | 3pm-8pm
-       Wednesday | 3pm-8pm
-       Thursday  | 3pm-8pm
-       Friday    | 3pm-9pm
-       Saturday  | 8am-3pm
-       Sunday    | Closed
-    </p>
-
+    <section class="contact-us">
     <h4>Contact Us:</h4>
     <p>Name:</p>
-    <textarea></textarea>
-    <p>Email Address:</p>
-    <textarea></textarea>
-    <p>Phone Number:</p>
-    <textarea></textarea>
-    <p>Comments/Concerns:</p>
-    <textarea></textarea>
-    <button>Submit</button>
+    <input type="text" id="name" placeholder="Your Name">
+    <span id="name-error" class="error-message"></span>
 
-    <h5>Subscribe to Our Newsletter</h3>
-    <textarea></textarea>
-<button>Subscribe</button>
+    <p>Email Address:</p>
+    <input type="email" id="email" placeholder="Your Email">
+    <span id="email-error" class="error-message"></span>
+
+    <p>Phone Number:</p>
+    <input type="text" id="phone" placeholder="Your Phone Number (Optional)">
+    <span id="phone-error" class="error-message"></span>
+
+    <p>Comments/Concerns:</p>
+     <textarea id="comments" placeholder="Your Comments/Concerns"></textarea>
+    <span id="comments-error" class="error-message"></span>
+
+    <button id="submitBtn">Submit</button>
+</section>
+
+    <h3>Subscribe to Our Newsletter</h3>
+    <section class="socials">
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </section>
+<input type="email" id="subscribe-email" placeholder="Enter Your Email">
+<button id="subscribeBtn">Subscribe</button>
+<span id="subscribe-error" class="subscribe-error">Please enter a valid email address.</span>
+
+<section class="links">
+    <div class"link">
 <a href="index.html">Home Page</a>
+</div>
     <a href="gallery.html">Gallery</a>
-    <a href="custompage.html">Custom Page</a>
+    <a href="custompage.html">Our Community</a>
+</section>
+<!--Beginning of scripting-->
+<script>
+// Contact Us Form Submission
+document.getElementById("submitBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const commentsInput = document.getElementById("comments");
+
+  const nameError = document.getElementById("name-error");
+  const emailError = document.getElementById("email-error");
+  const phoneError = document.getElementById("phone-error");
+  const commentsError = document.getElementById("comments-error");
+
+  // Reset error messages
+  nameError.innerText = "";
+  emailError.innerText = "";
+  phoneError.innerText = "";
+  commentsError.innerText = "";
+
+  let isValid = true;
+
+  if (nameInput.value.trim() === "") {
+    nameError.innerText = "Please enter your name.";
+    isValid = false;
+  }
+  if (emailInput.value.trim() === "") {
+    emailError.innerText = "Please enter your email.";
+    isValid = false;
+  }
+  if (commentsInput.value.trim() === "") {
+    commentsError.innerText = "Please enter your comments or concerns.";
+    isValid = false;
+  }
+
+  if (isValid) {
+    const customerInfo = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      comments: commentsInput.value.trim()
+    };
+
+    localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
+
+    alert(`Thank you for contacting us, ${customerInfo.name}! Your message has been saved.`);
+
+    // Clear form
+    nameInput.value = "";
+    emailInput.value = "";
+    phoneInput.value = "";
+    commentsInput.value = "";
+  }
+});
+
+// Newsletter Subscription
+document.getElementById("subscribeBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  const emailInput = document.getElementById("subscribe-email");
+  const subscribeError = document.getElementById("subscribe-error");
+
+  if (emailInput.value.trim() === "") {
+    subscribeError.style.display = "inline";
+    subscribeError.innerText = "Please enter a valid email address.";
+  } else {
+    subscribeError.style.display = "none";
+    alert("Thank you for subscribing!");
+    emailInput.value = "";
+  }
+});
+</script>
 
 </body>
 </html>
