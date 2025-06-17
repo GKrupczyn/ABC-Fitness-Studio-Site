@@ -4,39 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
+    <header class="banner">
+        <img src ="logo.png" alt="Client Logo" class="logo">
+        <h1>ABC Fitness Studio</h1>
+        <a href="gallery.html">Gallery</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="custompage.html">Our Community</a>
+        </header>
+     
+    <section class="promo">
+    <div class="promo-box">
+    <h3>Refferal Program</h3>
+    <p>Invite 2 friends and get 1 free class of your choice.</p>
+    <button>Act Now</button>
+    </div>
+    <div class="promo-box">
+    <h3>Fitness Friday</h3>
+    <p>Enjoy an extra 30 minutes of class time for free on Friday's.</p>
+    <button>Act Now</button>
+    </div>
+    <div class="promo-box">
+    <h3>BOGO</h3>
+    <p>Buy any of our merchandise and recieve a second one free.</p>
+    <button>Act Now</button>
+    </div>
+    </section>
 
-    <img src ="images/logo.png" alt"Client Logo">
-    <h1>ABC Fitness Studio</h1>
-    <a href="gallery.html">Gallery</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="custompage.html">Custom Page</a>
+    <section class="index-pics">
+    <img src="YogaMat.png"alt="ABC Fitness yoga mat"class="img">
+    <img src="WaterBottle.png"alt="ABC Fitness watwr bottle"class="img">
+    </section>
 
-    <img src="images/GroupKickBoxing.png"alt"group kickboxing">
-    <img src="images/GroupPilates.png"alt"group pilates">
-    <img src="images/GroupYoga.png"alt"group yoga">
-
-    <img src="images/YogaMat.png"alt"ABC Fitness yoga mat">
-    <img src="images/WaterBottle.png"alt"ABC Fitness watwr bottle">
-<p>Shop Now!</p>
-
-<h2>Why choose Us?</h2>
+    
+<h2 id="wcu">Why choose Us?</h2>
+<section class="why-us">
+<div class="reason">
 <p>Certified world class instructors</p>
+</div>
+<div class="reason">
 <p>1 on 1 and group setting options</p>
+</div>
+<div class="reason">
 <p>Competitive pricing</p>
+</div>
+</section>
 
+<section class="sbc">
 <h3>Shop By Category:</h3>
+
+<div class="category">
 <button>Services</button>
+</div>
+<div class="category">
 <button>Clothing</button>
+</div>
+<div class="category">
 <button>Accessories</button>
+</div>
+</section>
 
 <h3>Subscribe to Our Newsletter</h3>
-<textarea></textarea>
-<button>Subscribe</button>
-<a href="gallery.html">Gallery</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="custompage.html">Custom Page</a>
+<section class="socials">
+<div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</section>
+ <input type="email" id="subscribe-email" placeholder="Enter Your Email">
+<button id="subscribeBtn">Subscribe</button>
+<span id="subscribe-error" class="subscribe-error">Please enter a valid email address.</span>
 
+
+<section class="links">
+    <div class"link">
+<a href="gallery.html">Gallery</a>
+</div>
+    <a href="aboutus.html">About Us</a>
+    <a href="custompage.html">Our Community</a>
+</section>
+
+
+<!--Beginning of scripting-->
+<script>
+  document.getElementById("subscribeBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById("subscribe-email");
+    const subscribeError = document.getElementById("subscribe-error");
+     if (emailInput.value === "") {
+        subscribeError.style.display = "inline";
+                subscribeError.innerText = "Please enter a valid email address.";
+            } else {
+                 subscribeError.style.display = "none";
+                 emailInput.value = "";  
+                alert("Thank you for subscribing!");
+            }    
+  });
+</script>
 </body>
 </html>
